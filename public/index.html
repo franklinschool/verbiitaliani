@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name="theme-color" content="#222831">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel='manifest' href='./manifest.json'>
+  <link rel="apple-touch-icon" href="images/icon-48-48.png" />
+  <link rel="apple-touch-icon" href="images/icon-72-72.png" />
+  <link rel="apple-touch-icon" href="images/icon-96-96.png" />
+  <link rel="apple-touch-icon" href="images/icon-144-144.png" />
+  <link rel="apple-touch-icon" href="images/icon-192-192.png" />
+  <link rel="apple-touch-icon" href="images/icon-512-512.png" />
+  <meta name="apple-mobile-web-app-status-bar" content="#008C45" />
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+  <link href='./style.css' rel='stylesheet'>
+
+  <script>
+    // Registering our Service worker
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js', { scope: './' })
+    }
+  </script>
+</head>
+<body>
+<div id="screenA">
+  <div class="mItem" onclick="cards.view('v')">
+    <div class="mi">view_array</div>
+    <div class="mTxt">View Cards</div>
+  </div>
+  <div class="mItem" onclick="cards.view('m')">
+    <div class="mi">edit</div>
+    <div class="mTxt">Manage Cards</div>
+  </div>
+</div>
+
+<div id="screenB" class="hide">
+  <div id="bCard"></div>
+
+  <div id="bManage">
+    <div class="mi" onclick="cards.screen(0)">reply</div>
+    <div class="mi bManage" onclick="cards.delete()">clear</div>
+    <div class="mi bManage" onclick="cards.add()">add</div>
+    <div class="mi" onclick="cards.move()">navigate_before</div>
+    <div class="mi" onclick="cards.move(1)">navigate_next</div>
+    <div id="bCardCount">
+      <span id="bCardNow"></span> / <span id="bCardAll"></span>
+    </div>
+  </div>
+</div>
+<script src="./script.js" type="text/javascript"></script>
+</body>

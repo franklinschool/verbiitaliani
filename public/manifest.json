@@ -1,0 +1,36 @@
+{
+  "name": "I Verbi Italiani",
+  "short_name": "VerbiItaliani",
+  "theme_color": "#008C45",
+  "background_color": "#ffad17",
+  "display": "standalone",
+  "Scope": "",
+  "orientation": "portrait-primary",
+  "start_url": "/index.html",
+"icons": [
+    {
+      "src": "/images/icon-48-48.png",
+      "type": "image/png", "sizes": "48x48"
+    },
+    {
+      "src": "/images/icon-72-72.png",
+      "type": "image/png", "sizes": "72x72"
+    },
+    {
+      "src": "/images/icon-96-96.png",
+      "type": "image/png", "sizes": "96x96"
+    },
+    {
+      "src": "/images/icon-144-144.png",
+      "type": "image/png", "sizes": "144x144"
+    },
+    {
+      "src": "/images/icon-192-192.png",
+      "type": "image/png", "sizes": "192x192"
+    },
+    {
+      "src": "/images/icon-512-512.png",
+      "type": "image/png", "sizes": "512x512"
+    }
+  ]
+}
