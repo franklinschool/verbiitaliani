@@ -1,25 +1,30 @@
 const cacheName = 'verbiItaliani';
+const assets = [
+  '/',
+  '/index.html',
+  '/public/style.css',
+  '/public/script.js',
+  '/public/materialize.min.css',
+  '/public/materialize.min.js',
+  '/public/manifest.json',
+  'https://fonts.googleapis.com/icon?family=Material+Icons',
+  'https://fonts.gstatic.com/s/materialicons/v142/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
+];
 
-self.addEventListener('install', e => {
-  e.waitUntil(
+self.addEventListener('install', evt => {
+  evt.waitUntil(
     caches.open(cacheName).then(cache => {
-      return cache.addAll([
-        './',
-        './index.html',
-        './manifest.json',
-        './style.css',
-        './script.js',
-      ]);
+      cache.addAll(assets);
     })
   );
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
+self.addEventListener('fetch', evt => {
+  evt.respondWith(
     caches.open(cacheName)
-      .then(cache => cache.match(event.request, { ignoreSearch: true }))
+      .then(cache => cache.match(evt.request, { ignoreSearch: true }))
       .then(response => {
-        return response || fetch(event.request);
+        return response || fetch(evt.request);
       })
   );
 });

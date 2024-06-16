@@ -1,7 +1,7 @@
 {
   "name": "verbiitaliani",
-  "version": "1.0.0",
-  "description": "Imparare i verbi italiani con schede flash",
+  "version": "1.0.1",
+  "description": "Per imparare i verbi italiani con schede flash",
   "main": "sw.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
