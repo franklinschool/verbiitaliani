@@ -13,13 +13,6 @@
   <meta name="apple-mobile-web-app-status-bar" content="#008C45" />
   <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
   <link href='./public/style.css' rel='stylesheet'>
-
-  <script>
-    // Registering our Service worker
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js', { scope: './' })
-    }
-  </script>
 </head>
 <body>
 <div id="screenA">
@@ -47,5 +40,8 @@
     </div>
   </div>
 </div>
-<script src="./public/script.js" type="text/javascript"></script>
+<button id="install" hidden>Install</button>
+
+<script src="./public/app.js"></script>
+<script src="./public/script.js"></script>
 </body>
