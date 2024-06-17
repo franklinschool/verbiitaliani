@@ -11,21 +11,20 @@ const assets = [
   'https://fonts.gstatic.com/s/materialicons/v142/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
 ];
 
-self.addEventListener("install", (evt) => {
+self.addEventListener("install", (installEvent) => {
    let cacheUrls = async () => {
       const cache = await caches.open(cacheName);
       return cache.addAll(assets);
    };
-   evt.waitUntil(cacheUrls());
+   installEvent.waitUntil(cacheUrls());
 });
 
-
-self.addEventListener('fetch', evt => {
-  evt.respondWith(
+self.addEventListener('fetch', fetchEvent => {
+  fetchEvent.respondWith(
     caches.open(cacheName)
-      .then(cache => cache.match(evt.request, { ignoreSearch: true }))
+      .then(cache => cache.match(fetchEvent.request, { ignoreSearch: true }))
       .then(response => {
-        return response || fetch(evt.request);
+        return response || fetch(fetchEvent.request);
       })
   );
 });

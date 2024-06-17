@@ -1,6 +1,6 @@
 {
   "name": "verbiitaliani",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Per imparare i verbi italiani con schede flash",
   "main": "sw.js",
   "scripts": {
